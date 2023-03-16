@@ -7,7 +7,7 @@ const app = express();
 const userRoutes = require('./routes/user')
 const offerRoutes = require('./routes/offer')
 
-mongoose.connect("mongodb+srv://graut69:nbssmlrs@liveops-cluster.nxorlqv.mongodb.net/test").then(()=> {
+mongoose.connect(process.env.MONGODB_URL).then(()=> {
     console.log("Successfull connected to db")
 }).catch(()=> {
     console.log("Failed to connect")
